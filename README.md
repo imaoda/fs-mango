@@ -4,6 +4,12 @@ nodejs 库，完成文件的读写
 
 ## api
 
+```js
+const Mango = require("fs-mango");
+const db = new Mango({ root: "/User/wangyongfeng" });
+db.rDir();
+```
+
 | api                   | 返回       | 用途                              |
 | --------------------- | ---------- | --------------------------------- |
 | rDir(dirname)         | string[]   | 读取目录                          |
