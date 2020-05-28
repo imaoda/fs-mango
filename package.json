@@ -1,0 +1,19 @@
+{
+  "author": {
+    "name": "wangyongfeng"
+  },
+  "dependencies": {
+  },
+  "description": "nodejs 库，简易版 mango",
+  "keywords": [
+    "mango",
+    "fs"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "fs-mango",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.1"
+}
