@@ -86,6 +86,7 @@ class Mango {
     if (!fs.existsSync(oldName)) errorMsg = "不存在当前目录/文件";
     if (fs.existsSync(newName)) errorMsg = "该路径名已存在";
     if (errorMsg) throw new Error(errorMsg);
+    execSync(`mkdir -p  ${path.dirname(newName)}`);
     execSync(`mv ${oldName} ${newName}`);
   }
 }
