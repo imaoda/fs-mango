@@ -11,7 +11,7 @@ class Mango {
   }
 
   _exact(dir) {
-    if (dir.match("..")) throw new Error("非法路径");
+    if (dir.indexOf("..") !== -1) throw new Error("非法路径");
     return path.resolve(this.root, dir);
   }
 
