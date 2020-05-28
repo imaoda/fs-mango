@@ -12,7 +12,7 @@ class Mango {
 
   _exact(dir) {
     if (dir.indexOf("..") !== -1) throw new Error("非法路径");
-    return path.resolve(this.root, dir);
+    return path.join(this.root, dir);
   }
 
   // 读取路径下的内容
