@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { execSync } = require("child_process");
 
+const FILE_TO_FILTER = [".DS_Store"];
 class Mango {
   constructor({ root }) {
     if (root[0] !== "/") throw new Error("根路径需要绝对地址");
@@ -21,7 +22,9 @@ class Mango {
     if (!fs.existsSync(dir) || !fs.statSync(dir).isDirectory()) {
       return [];
     } else {
-      return fs.readdirSync(dir);
+      return fs
+        .readdirSync(dir)
+        .filter((item) => !FILE_TO_FILTER.includes(item));
     }
   }
 
@@ -54,7 +57,7 @@ class Mango {
    * @param {*} dir
    * @param {*} stream 支持 str buffer stream。以及 特殊的 null，null 会删除原文件
    */
-  wFile(dir, stream) {
+  wFile(dir, stream = "") {
     dir = this._exact(dir);
     if (fs.existsSync(dir) && fs.statSync(dir).isDirectory())
       throw new Error("已存在同名文件夹");
