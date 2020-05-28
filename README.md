@@ -1,3 +1,7 @@
+## introduction
+
+nodejs 库，完成文件的读写
+
 ## api
 
 | api                   | 返回       | 用途                              |
